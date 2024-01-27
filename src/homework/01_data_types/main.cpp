@@ -13,11 +13,11 @@ int main()
 {
 	int num = 0;
 
-	cout<<"Enter a number: ";
-	cin>>num;//value from keyboard saved into the num variable
+	cout << "Enter a number: ";
+	cin >> num;//value from keyboard saved into the num variable
 
 	int result = 0;
-	result = multiply_numbers(num);
+	result = multiply_numbers(num); // -----
 
 	cout<<"Value is: "<<result<<"\n";
 
