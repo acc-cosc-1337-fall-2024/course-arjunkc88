@@ -12,3 +12,16 @@ TEST_CASE("Verify sum_numbers function")
 	REQUIRE(add_numbers(10, 10) == 20);
 }
 
+// Test Case 1: Test Get Sales Tax
+void test_get_sales_tax() 
+{
+    assert(get_sales_tax_amount(10) == 0.675);
+    assert(get_sales_tax_amount(20) == 1.35);
+}
+
+// Test Case 2: Test Get Tip Amount
+void test_get_tip_amount() 
+{
+    assert(get_tip_amount(20, 15) == 3);
+    assert(get_tip_amount(20, 20) == 4);
+}
