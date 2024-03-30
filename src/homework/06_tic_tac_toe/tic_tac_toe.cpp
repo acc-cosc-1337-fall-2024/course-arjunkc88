@@ -32,18 +32,22 @@ std::string TicTacToe::get_player() const {
 
 void TicTacToe::display_board() const {
     std::cout << "\n";
-    for (int i = 0; i < 9; i++) {
-        std::cout << " " << pegs[i] << " ";
-        if (i % 3 == 2) std::cout << "\n";
-    }
+    std::cout << " " << pegs[0] << " | " << pegs[1] << " | " << pegs[2] << "\n";
+    std::cout << "-----------\n";
+    std::cout << " " << pegs[3] << " | " << pegs[4] << " | " << pegs[5] << "\n";
+    std::cout << "-----------\n";
+    std::cout << " " << pegs[6] << " | " << pegs[7] << " | " << pegs[8] << "\n";
     std::cout << "\n";
 }
+
+
 
 void TicTacToe::set_next_player() {
     player = (player == "X") ? "O" : "X";
 }
 
 bool TicTacToe::check_board_full() {
+
     for (const auto& peg : pegs) {
         if (peg == " ") return false;
     }
