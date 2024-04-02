@@ -9,15 +9,30 @@ int main() {
     std::cin >> player;
     game.start_game(player);
 
-    while(!game.game_over()) {
+    bool continue_playing = true;
+    while (continue_playing) {
         game.display_board();
         std::cout << "Player " << game.get_player() << ", enter position (1-9): ";
         int position;
         std::cin >> position;
         game.mark_board(position);
-    }
 
-    game.display_board();
-    std::cout << "Game over! The board is full." << std::endl;
+        // Check for game-over conditions and handle user choice
+        if (game.game_over()) {
+            game.display_board();
+            // Ask if the user wants to play again
+            char choice;
+            std::cout << "Play again? (y/n): ";
+            std::cin >> choice;
+            if (choice != 'y') {
+                continue_playing = false;
+            } else {
+                // Restart the game
+                game.start_game(game.get_player()); // Maintain the same starting player
+
+            }
+        }
+    }
+  std::cout << "Thanks for playing!" << std::endl;
     return 0;
 }
