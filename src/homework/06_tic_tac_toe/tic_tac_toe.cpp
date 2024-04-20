@@ -46,7 +46,17 @@ std::string tic_tac_toe::get_winner() const {
     return winner;
 }
 
+// bool tic_tac_toe::check_column_win() {
+//     for(int i = 0; i < 3; ++i) {
+//         if(pegs[i] != " " && pegs[i] == pegs[i+3] && pegs[i+3] == pegs[i+6]) {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
 bool tic_tac_toe::check_column_win() {
+    // std::cout << "Player X: " << (player == "X") << std::endl; // Debug print
     for(int i = 0; i < 3; ++i) {
         if(pegs[i] != " " && pegs[i] == pegs[i+3] && pegs[i+3] == pegs[i+6]) {
             return true;
@@ -54,6 +64,8 @@ bool tic_tac_toe::check_column_win() {
     }
     return false;
 }
+
+
 
 bool tic_tac_toe::check_row_win() {
     for(int i = 0; i < 9; i += 3) {
@@ -70,7 +82,8 @@ bool tic_tac_toe::check_diagonal_win() {
 }
 
 void tic_tac_toe::set_winner() {
-    winner = player == "X" ? "O" : "X";
+    winner = player;
+    //winner = player == "X" ? "O" : "X";
 }
 
 void tic_tac_toe::set_next_player() {
